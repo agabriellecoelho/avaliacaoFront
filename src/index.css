@@ -20,6 +20,8 @@ body {
   width: 100%;
   height: 100vh;
   background-color: #c6e2ff;
+  background: linear-gradient(to top, #c6e2ff, #66b3ff);
+
 }
 
 .formLogin {
@@ -28,16 +30,38 @@ body {
   background-color: #fff;
   border-radius: 7px;
   padding: 40px;
+  height: 55vh;
   /*box-shadow: 10px 10px 40px rgba(0, 0, 0, 0.4);*/
-  gap: 5px
+  /*gap: 5px*/
+  position: relative;
+  top: 30px;
 }
 
-.formLogin h1 {
+.page h1 {
+  color:#fff;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 0;
+  margin: 0;
+  font-weight:400;
+  font-size: 5.5em;
+}
+
+.formLogin h2 {
   padding: 0;
   margin: 0;
   font-weight: 500;
-  font-size: 2.3em;
+  font-size: 2.0em;
 }
+
+.page h3 {
+  color:#fff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  font-weight: 200;
+  font-size: 1.8em;
+}
+
 
 .formLogin p {
   display: inline-block;
@@ -80,15 +104,20 @@ body {
   transition: all linear 160ms;
   cursor: pointer;
   margin: 0 !important;
-
 }
-.teste {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  align-content: center;
-  justify-content: center;
-  width: 100%;
-  height: 10h;
-  background-color: #fff;
+.btn:hover{
+  background-color: #51a5ff;
+}
+
+
+.Cadastrar p {
+  font-size: 16;
+  color: #666;
+  font-weight: 400;
+}
+.Cadastrar a {
+  font-size: 16;
+  color: #666;
+  font-weight: 600;
+  text-decoration: none;
 }
