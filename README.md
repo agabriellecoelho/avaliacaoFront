@@ -1,8 +1,17 @@
-# React + Vite
+1- O projeto deverá conter controle de versão (Git e GitHub) - Gabrielle
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+2- O projeto deverá utilizar o JSON Server para persistência dos dados - Carol
 
-Currently, two official plugins are available:
+3- A troca de informações entre o Front-end e o JSON Server deverá ser através de requisições HTTP - Carol
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+4- Aplicar tratamento de exceções nas requisições HTTP - Carol
+
+5- Adicionar uma tela de login. Deverá apresentar nesta tela mensagem de erro em caso de falha no login - Gabrielle
+
+6- Adicionar um CRUD completo de serviços (mínimo de 05 campos) - Carol
+
+7- Adicionar um CRUD completo de usuários do sistema (mínimo de 05 campos) - Gabrielle e Carol 
+
+8- Adicionar ao projeto uma Navbar e um footer fixo para todas as telas (padrão SPA), exceto a tela de login - Gabrielle
+
+9- O sistema deverá permitir a navegação entre páginas através da Navbar e conforme as demais dinâmicas do sistema - Gabrielle
