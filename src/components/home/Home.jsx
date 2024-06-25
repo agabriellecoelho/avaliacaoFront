@@ -1,16 +1,33 @@
+<<<<<<< HEAD:src/components/home/Home.jsx
 import './home.css'
 import { FaUser, FaShoppingCart } from 'react-icons/fa'
 
 export default function Home() {
 return (
     <>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Produtos</title>
+  <link rel="stylesheet" href="src/components/home/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+>>>>>>> adb014d7f4c30730ad9d01b8ff38978935fd0063:home.html
   <header>
+    <a href="home.html" class="store-name">Lume</a>
     <h1>Nossos Produtos</h1>
     <nav class="navegar">
       <a class="nav" href='carrinho.html'><i class="fas fa-shopping-cart"></i></a>
       <a class="nav" href="usuario.html"><i class="fas fa-user"></i></a>
+<<<<<<< HEAD:src/components/home/Home.jsx
       <a href="carrinho.html"><FaShoppingCart></FaShoppingCart></a>
       <a href='usuario.html'><FaUser></FaUser> </a>
+=======
+>>>>>>> adb014d7f4c30730ad9d01b8ff38978935fd0063:home.html
     </nav>
   </header>
   <main class="container">
