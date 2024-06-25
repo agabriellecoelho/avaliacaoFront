@@ -6,11 +6,11 @@ import "./navbar.css";
 export default function Navbar() {
     return (
         <header className="navbar">
-            <Link to="/" className="store-name">Lume</Link>
-            <h1 className="nav-title">Produtos</h1>  
+            <Link to="/app/home" className="store-name">Lume</Link>
+            <h1 className="nav-title">Central</h1>  
             <nav className="navegar">
-                <Link to="/carrinho"><FaBook /></Link>
-                <Link to="/usuario"><FaUser /></Link>
+                <Link to="/app/cardapio"><FaBook /></Link>
+                <Link to="/app/users"><FaUser /></Link>
             </nav>
         </header>
     );

@@ -1,19 +1,17 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { FiTrash2 } from "react-icons/fi";
-// import * as Dialog from '@radix-ui/react-dialog';
 import { useNavigate } from 'react-router-dom';
-import './creates.css';
-import './mp.css';
+import './creates.css'; 
+import './mp.css'; 
 
-export default function Creates() {
+export default function ProductList() {
   const [products, setProducts] = useState([]);
-  const [selectedProduct, setSelectedProduct] = useState({ photo: "", name: "" });
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch("http://localhost:3000/products");
+        const response = await fetch("http://localhost:3004/products");
         const data = await response.json();
         setProducts(data);
       } catch (error) {
@@ -27,7 +25,7 @@ export default function Creates() {
   const confirmarExclusao = async (id) => {
     if (window.confirm("Tem certeza que deseja excluir este produto?")) {
       try {
-        const response = await fetch(`http://localhost:3000/products/${id}`, {
+        const response = await fetch(`http://localhost:3004/products/${id}`, {
           method: 'DELETE',
         });
 
@@ -44,55 +42,48 @@ export default function Creates() {
     }
   };
 
-  const abrirModal = (photo, name) => {
-    setSelectedProduct({ photo, name });
-  };
-
-  const fecharModal = () => {
-    setSelectedProduct({ photo: "", name: "" });
-  };
-
   const handleCreateProduct = () => {
-    navigate('/app/services/create');
+    navigate('/app/cardapio/create');
   };
 
   const handleEditProduct = (id) => {
-    navigate(`/app/services/edit/${id}`);
+    navigate(`/app/cardapio/edit/${id}`);
   };
 
-  const classe = {
-    ProductList: "create-service",
-    TabelaCrudProduct: "crud-service-table",
-    actions: "service-actions",
-    createButton: "create-button"
+  const classes = {
+    ProductList: "create-service", 
+    TableContainer: "crud-service-table", 
+    Actions: "service-actions", 
+    CreateButton: "create-button", 
+    ProductImage: "product-image", 
+    ModalOverlay: "modal-overlay", 
+    ModalContent: "modal-content", 
+    ModalClose: "modal-close" 
   };
 
   return (
-    <div className={classe.ProductList}>
+    <div className={classes.ProductList}>
       <h2>Lista de Produtos</h2>
       <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-        <button className={classe.createButton} onClick={handleCreateProduct}>Criar Novo Produto</button>
+        <button className={classes.CreateButton} onClick={handleCreateProduct}>Criar Novo Produto</button>
       </div>
-      <table className={classe.TabelaCrudProduct}>
+      <table className={classes.TableContainer}>
         <thead>
           <tr>
             <th>Nome do Produto</th>
-            <th>Modelo/Plataforma</th>
             <th>Preço</th>
             <th>Estoque</th>
-            <th>Foto</th>
-            <th>Ações</th>
+            <th>Descrição</th>
           </tr>
         </thead>
         <tbody>
           {products.map((product) => (
             <tr key={product.id}>
               <td>{product.name}</td>
-              <td>{product.platform}</td>
               <td>{product.price}</td>
               <td>{product.stock}</td>
-              <td><img src={product.photo} alt={product.name} onClick={() => abrirModal(product.photo, product.name)} style={{ cursor: 'pointer' }} className="product-image" /></td>
-              <td className={classe.actions}>
+              <td>{product.description}</td>
+              <td className={classes.Actions}>
                 <button onClick={() => handleEditProduct(product.id)}>
                   Editar
                 </button>

@@ -1,0 +1,56 @@
+.create-user {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px; 
+  }
+  
+  .create-user h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .create-user form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .create-user form label {
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  .create-user form input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .create-user form button {
+    background-color: #66b3ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .create-user form button:hover {
+    background-color: #007BFF;
+  }
+  
+  .create-user form button[type="button"] {
+    background-color: #ccc;
+    margin-right: 10px;
+  }
+  
+  .create-user form button[type="button"]:hover {
+    background-color: #999;
+  }
+  

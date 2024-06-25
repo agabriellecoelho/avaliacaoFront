@@ -1,23 +1,23 @@
-import { useState, useEffect } from "react";
-import { useNavigate, useParams } from 'react-router-dom';
-import './creates.css';
-import './mp.css';
+import React, { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import './createedit.css';
 
 export default function CreateOrEditProduct() {
-  const [currentProduct, setCurrentProduct] = useState({ name: '', platform: '', price: '', stock: '', photo: '' });
-  const [isEditing, setIsEditing] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
 
+  const [currentProduct, setCurrentProduct] = useState({ name: '', description: '', price: '', stock: '' });
+
   useEffect(() => {
     if (id) {
-      // Fetch product by ID
       const fetchProduct = async () => {
         try {
-          const response = await fetch(`http://localhost:3000/products/${id}`);
+          const response = await fetch(`http://localhost:3004/products/${id}`);
+          if (!response.ok) {
+            throw new Error("Erro ao buscar produto.");
+          }
           const product = await response.json();
           setCurrentProduct(product);
-          setIsEditing(true);
         } catch (error) {
           console.error("Erro ao buscar produto:", error);
         }
@@ -30,45 +30,67 @@ export default function CreateOrEditProduct() {
   const handleSaveProduct = async (e) => {
     e.preventDefault();
 
-    const url = isEditing ? `http://localhost:3000/products/${id}` : 'http://localhost:3000/products';
-    const method = isEditing ? 'PUT' : 'POST';
+    const url = id ? `http://localhost:3004/products/${id}` : 'http://localhost:3004/products';
+    const method = id ? 'PUT' : 'POST';
 
     try {
       const response = await fetch(url, {
         method,
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
-        body: JSON.stringify(currentProduct)
+        body: JSON.stringify(currentProduct),
       });
 
       if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
+        throw new Error(`Erro HTTP! Status: ${response.status}`);
       }
 
-      console.log("Product saved", currentProduct);
-      navigate('/app/services');
+      const data = await response.json();
+
+      navigate('/app/cardapio');
     } catch (error) {
-      console.error("An error occurred while saving the product:", error);
+      console.error("Erro ao salvar o produto:", error);
     }
   };
 
+  const handleCancel = () => {
+    navigate('/app/cardapio');
+  };
+
   return (
-    <div className="create-service">
-      <h2>{isEditing ? 'Editar Produto' : 'Criar Novo Produto'}</h2>
+    <div className="create-product">
+      <h2>{id ? 'Editar Produto' : 'Criar Novo Produto'}</h2>
       <form onSubmit={handleSaveProduct}>
         <label>Nome:</label>
-        <input name="name" type="text" value={currentProduct.name} onChange={(e) => setCurrentProduct({ ...currentProduct, name: e.target.value })} required />
-        <label>Modelo/Plataforma:</label>
-        <input name="platform" type="text" value={currentProduct.platform} onChange={(e) => setCurrentProduct({ ...currentProduct, platform: e.target.value })} required />
+        <input
+          type="text"
+          value={currentProduct.name}
+          onChange={(e) => setCurrentProduct({ ...currentProduct, name: e.target.value })}
+          required
+        />
+        <label>Descrição:</label>
+        <textarea
+          value={currentProduct.description}
+          onChange={(e) => setCurrentProduct({ ...currentProduct, description: e.target.value })}
+          required
+        />
         <label>Preço:</label>
-        <input name="price" type="number" value={currentProduct.price} onChange={(e) => setCurrentProduct({ ...currentProduct, price: e.target.value })} required />
+        <input
+          type="text"
+          value={currentProduct.price}
+          onChange={(e) => setCurrentProduct({ ...currentProduct, price: e.target.value })}
+          required
+        />
         <label>Estoque:</label>
-        <input name="stock" type="text" value={currentProduct.stock} onChange={(e) => setCurrentProduct({ ...currentProduct, stock: e.target.value })} required />
-        <label>Foto URL:</label>
-        <input name="photo" type="text" value={currentProduct.photo} onChange={(e) => setCurrentProduct({ ...currentProduct, photo: e.target.value })} required />
-        <button type="submit">{isEditing ? 'Salvar Alterações' : 'Salvar'}</button>
-        <button type="button" onClick={() => navigate('/app/services')}>Cancelar</button>
+        <input
+          type="text"
+          value={currentProduct.stock}
+          onChange={(e) => setCurrentProduct({ ...currentProduct, stock: e.target.value })}
+          required
+        />
+        <button type="submit">{id ? 'Salvar Alterações' : 'Salvar'}</button>
+        <button type="button" onClick={handleCancel}>Cancelar</button>
       </form>
     </div>
   );

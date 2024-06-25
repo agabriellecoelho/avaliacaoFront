@@ -1,0 +1,67 @@
+.create-user {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+  }
+  
+  .create-user h2 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .create-user .create-button {
+    background-color: #66b3ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .create-user .create-button:hover {
+    background-color: #007BFF;
+  }
+  
+  .create-user .crud-user-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .create-user .crud-user-table th,
+  .create-user .crud-user-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+  }
+  
+  .create-user .crud-user-table th {
+    background-color: #66b3ff;
+    color: white;
+  }
+  
+  .create-user .user-actions button {
+    background-color: transparent;
+    color: #007BFF;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+  
+  .create-user .user-actions button:hover {
+    text-decoration: underline;
+  }
+  
+  .create-user .user-actions button:last-child {
+    color: #dc3545;
+  }
+  
+  .create-user .user-actions button:last-child:hover {
+    color: #c82333;
+  }
+  

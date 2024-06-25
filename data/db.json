@@ -1,19 +1,65 @@
 {
   "products": [
     {
-      "name": "Uva",
-      "price": "15",
+      "id": "1",
+      "name": "Bolo de Cenoura",
+      "price": "18",
       "stock": "30",
-      "id": "630f"
+      "description": "Fatia de bolo de cenoura super macio coberto com brigadeiro de chocolate belga e granulados"
+    },
+    {
+      "id": "2",
+      "name": "Cheesecake de Frutas Vermelhas",
+      "price": "20",
+      "stock": "10",
+      "description": "Fatia de cheesecake tradicional assado no forno, coberto com geléia de frutas vermelhas e pedaços de frutas frescas"
+    },
+    {
+      "id": "3",
+      "name": "Pudim de Leite Condensado",
+      "price": "15",
+      "stock": "5",
+      "description": "Fatia de pudim de Leite condensado sem furinhos, com calda de caramelo de açucar"
+    },
+    {
+      "id": "4",
+      "name": "Copo da Felicidade Paçoca",
+      "price": "20",
+      "stock": "30",
+      "description": "Copo de 300mL mega recheado com paçoca, brigadeiro branco e brigadeiro de chocolate belga"
+    },
+    {
+      "id": "5",
+      "name": "Copo da Felicidade Morango",
+      "price": "20",
+      "stock": "30",
+      "description": "Copo de 300mL mega recheado com morangos frescos, pedaços de brownie, brigadeiro branco e brigadeiro de chocolate belga"
+    },
+    {
+      "id": "99a9",
+      "name": "teste",
+      "description": "teste",
+      "price": "5",
+      "stock": "5"
     }
   ],
   "usuarios": [
     {
       "id": "1",
-      "usuario": "dj_rogerinho",
+      "usuario": "ana.g",
       "senha": "lalala",
-      "email": "djrogerinho@gmail.com",
-      "genero": "M"
+      "email": "anag@gmail.com",
+      "genero": "F"
+    },
+    {
+      "id": "1a15",
+      "username": "",
+      "password": "",
+      "fullName": "",
+      "email": "teste@gmail.com",
+      "usuario": "teste",
+      "senha": "123",
+      "genero": "qwrqrqw"
     }
   ]
 }
