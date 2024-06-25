@@ -1,14 +1,17 @@
+import React from "react";
 import { Link } from "react-router-dom";
+import { FaUser, FaBook } from 'react-icons/fa';
 import "./navbar.css";
-import { GiGamepad } from "react-icons/gi";
 
 export default function Navbar() {
     return (
-        <>
-        <div className="container-navbar">
-            <GiGamepad className="navbar-text"/>
-            <span className="navbar-items"><Link to={'/app/home'}>Início</Link></span>
-        </div>
-        </>
-    )
+        <header className="navbar">
+            <Link to="/" className="store-name">Lume</Link>
+            <h1 className="nav-title">Produtos</h1>  
+            <nav className="navegar">
+                <Link to="/carrinho"><FaBook /></Link>
+                <Link to="/usuario"><FaUser /></Link>
+            </nav>
+        </header>
+    );
 }

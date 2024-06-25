@@ -1,0 +1,11 @@
+.container-footer {
+    bottom: 0;
+    height: fit-content;
+    width: 100%;
+    text-align: center;
+    background-color: #66b3ff;
+}
+
+.container-footer .copyright-text {
+    color: white; 
+}
