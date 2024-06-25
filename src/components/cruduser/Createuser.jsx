@@ -10,7 +10,6 @@ export default function CreateOrEditUsers() {
 
   useEffect(() => {
     if (id) {
-      // Fetch user by ID
       const fetchUser = async () => {
         try {
           const response = await fetch(`http://localhost:3004/usuarios/${id}`);
